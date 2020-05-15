@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список задач</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="from-container mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col col-8 mx-auto">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Менеджер задач</h5>
+                <form name="addTask">
+                  <input
+                    type="text"
+                    name="title"
+                    class="form-control"
+                    placeholder="Название задачи"
+                  />
+                  <input
+                    type="text"
+                    name="body"
+                    class="form-control mt-3"
+                    placeholder="Описание задачи"
+                  />
+
+                  <button type="submit" class="btn btn-primary mt-4">
+                    Добавить
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-list-section mt-5">
+      <div class="container">
+        <ul class="list-group"></ul>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
