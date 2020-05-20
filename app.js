@@ -39,6 +39,14 @@ const tasks = [
     return acc;
   }, {});
 
+  function isNotTask(obectOfTasks) {
+    if (Object.keys(obectOfTasks).length === 0) {
+      return isTasksMassage();
+    }
+  }
+
+  isNotTask(obectOfTasks);
+
   //UI
 
   const listContainer = document.querySelector(
@@ -157,12 +165,25 @@ const tasks = [
     }
   }
 
+  function isTasksMassage() {
+    const form = document.querySelector(".from-container");
+    const p = document.createElement("p");
+    p.classList.add("massage", "mt-5", "d-flex", "justify-content-center");
+    p.textContent = "Список задач пуст!";
+    form.after(p);
+    return p;
+  }
+
+  function addBackgroundTask(id, parent) {
+    obectOfTasks[id].completed = true;
+    parent.style.background = "green";
+  }
+
   function onCompletedHandler({ target }) {
     if (target.classList.contains("btn-done")) {
       const parent = target.closest("[data-task-id]");
       const id = parent.dataset.taskId;
-      obectOfTasks[id].completed = true;
-      parent.style.background = "green";
+      addBackgroundTask(id, parent);
     }
   }
 })(tasks);
