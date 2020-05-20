@@ -162,6 +162,7 @@ const tasks = [
       const id = parent.dataset.taskId;
       const confirmed = deleteTask(id);
       deleteTaskFormHtml(confirmed, parent);
+      isNotTask(obectOfTasks);
     }
   }
 
